@@ -12,7 +12,11 @@
         "done": false
     },
     {
-        "name": "Megetetni a papagájt",
+        "name": "Macskát simogatni",
+        "done": false
+    },
+    {
+        "name": "Hóembert építeni",
         "done": false
     }
 ]
