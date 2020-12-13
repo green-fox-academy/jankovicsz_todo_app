@@ -1,22 +1,17 @@
 import fs from 'fs';
 import minimist from 'minimist';
+import Todo from './Todoclass.js'
 
 const args = minimist(process.argv);
 const argument = Object.keys(args)[1];
 
-// Todo app elindítása
+// Todo app elindítása, üres argumentum esetén a kézikönyv kinyomtatása
 function startTodo() {
     if (Object.keys(args).length < 2) {
-        printTodoManual();
+        const todo = new Todo(args.a).printTodoManual();
     } else if (argument !== 'l' && argument !== 'a' && argument !== 'r' && argument !== 'c') {
         console.log('Nem támogatott argumentum!');
     }
-}
-
-// A kézikönyv kinyomtatása
-function printTodoManual() {
-    let todoManual = fs.readFileSync('todo_man.txt', 'utf-8');
-    console.log(todoManual);
 }
 
 // Todo-k listázása
@@ -48,11 +43,7 @@ function AddNewTodos() {
     } if (typeof args.a === 'string' && process.argv.length > 4) {
         console.log('Egyszerre csak egy feladatot lehet megadni, szöveges formában és " " jelek között!');
     } else if (typeof args.a === 'string' && process.argv.length < 5) {
-        let newTodo = {
-            name: args.a,
-            done: false
-        };
-        jsonTodos.push(newTodo);
+        const todo = new Todo(args.a).addTodo(jsonTodos);
     }
     fs.writeFileSync('todos.json', JSON.stringify(jsonTodos, null, 4));
 }
