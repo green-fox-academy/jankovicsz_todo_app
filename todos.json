@@ -5,18 +5,18 @@
     },
     {
         "name": "Tejet venni",
-        "done": false
+        "done": true
     },
     {
         "name": "Megcsinálni a leckét",
-        "done": false
+        "done": true
     },
     {
         "name": "Macskát simogatni",
         "done": false
     },
     {
-        "name": "Hóembert építeni",
+        "name": "Kerékpározni",
         "done": false
     }
 ]
