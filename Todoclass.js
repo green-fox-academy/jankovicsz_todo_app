@@ -2,7 +2,7 @@ class Todo {
     name;
     done = false;
 
-    constructor(name) {
+    constructor(name = '') {
         this.name = name;
     }
 
@@ -11,18 +11,13 @@ class Todo {
         return this;
     }
 
-    printTodoManual() {
-        console.log(
-            '============================= \n' +
-            'Parancssori Todo applikáció \n' +
-            '============================= \n' +
-            '\n' +
-            'Parancssori argumentumok:\n' +
-            '    -l   Kilistázza a feladatokat \n' +
-            '    -a   Új feladatot ad hozzá \n' +
-            '    -r   Eltávolít egy feladatot \n' +
-            '    -c   Teljesít egy feladatot\n'
-        );
+    removeTodo(arr, index) {
+        arr.splice(index - 1, 1);
+        return this;
+    }
+
+    setStatusDone(arr, index) {
+        arr[index - 1].done = true;
         return this;
     }
 }

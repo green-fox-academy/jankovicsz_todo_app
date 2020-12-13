@@ -5,18 +5,18 @@
     },
     {
         "name": "Tejet venni",
-        "done": true
+        "done": false
     },
     {
         "name": "Megcsinálni a leckét",
         "done": true
     },
     {
-        "name": "Macskát simogatni",
+        "name": "Futni sokat",
         "done": false
     },
     {
-        "name": "Kerékpározni",
+        "name": "Bicajozni sokat",
         "done": false
     }
 ]
