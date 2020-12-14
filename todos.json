@@ -1,7 +1,7 @@
 [
     {
         "name": "Kutyát sétáltatni",
-        "done": false
+        "done": true
     },
     {
         "name": "Tejet venni",
@@ -12,11 +12,11 @@
         "done": true
     },
     {
-        "name": "Futni sokat",
+        "name": "Bicajozni",
         "done": false
     },
     {
-        "name": "Bicajozni sokat",
-        "done": false
+        "name": "Futni",
+        "done": true
     }
 ]

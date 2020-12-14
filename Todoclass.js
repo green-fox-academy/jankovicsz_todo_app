@@ -12,12 +12,16 @@ class Todo {
     }
 
     removeTodo(arr, index) {
-        arr.splice(index - 1, 1);
+        if (index > 0) {
+            arr.splice(index - 1, 1);
+        }
         return this;
     }
 
     setStatusDone(arr, index) {
-        arr[index - 1].done = true;
+        if (index > 0) {
+            arr[index - 1].done = true;
+        }
         return this;
     }
 }

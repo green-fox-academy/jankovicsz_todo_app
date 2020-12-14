@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/green-fox-academy/jankovicsz_todo_app#readme",
   "dependencies": {
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "npm": "^7.1.2"
+  },
+  "devDependencies": {
+    "tape": "^5.0.1"
   }
 }
