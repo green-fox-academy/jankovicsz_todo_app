@@ -12,8 +12,6 @@ const jsonTodos = JSON.parse(jsonContent);
 // Todo app elindítása, üres argumentum esetén a kézikönyv kinyomtatása
 function startTodo() {
     if (Object.keys(args).length < 2) {
-        console.log('Nem támogatott argumentum!');
-        console.log();
         printTodoManual();
     } else if (argument !== 'l' && argument !== 'a' && argument !== 'r' && argument !== 'c') {
         console.log('Nem támogatott argumentum!');
@@ -21,11 +19,10 @@ function startTodo() {
         printTodoManual();
     }
 }
+startTodo();
 
 // Argumentumok ellenőrzése
-function checkTodo() {
-    const check = new CheckTodo( args, jsonTodos ).check();
-}
+new CheckTodo( args, jsonTodos ).check();
 
 // A  kézikönyv kinyomtatása
 function printTodoManual() {
@@ -53,36 +50,34 @@ function printTodos() {
         }
     }
 }
+printTodos();
 
 // új Todo hozzáadása
 function AddNewTodos() {
     if (process.argv.length > 4) {
     console.log('Egyszerre csak egy feladatot lehet megadni, szöveges formában és " " jelek között!');
     } else if (typeof args.a === 'string') {
-        const todo = new Todo(args.a).addTodo(jsonTodos);
+        new Todo(args.a).addTodo(jsonTodos);
     }
     fs.writeFileSync('todos.json', JSON.stringify(jsonTodos, null, 4));
 }
+AddNewTodos();
 
 // Todo eltávolítása
 function removeTodo() {
     if (argument === 'r' && typeof args.r === 'number' && value <= jsonTodos.length) {
-        const todo = new Todo().removeTodo(jsonTodos, args.r);
+       new Todo().removeTodo(jsonTodos, args.r);
     }
     fs.writeFileSync('todos.json', JSON.stringify(jsonTodos, null, 4));
 }
+removeTodo();
 
 // feladat elvégzése
 function todoDone() {
     if (argument === 'c' && typeof args.c === 'number' && value <= jsonTodos.length) {
-        const todo = new Todo().setStatusDone(jsonTodos, args.c)
+        new Todo().setStatusDone(jsonTodos, args.c)
     }
     fs.writeFileSync('todos.json', JSON.stringify(jsonTodos, null, 4));
 }
 
-checkTodo();
-startTodo();
-printTodos();
-AddNewTodos();
-removeTodo();
 todoDone();
