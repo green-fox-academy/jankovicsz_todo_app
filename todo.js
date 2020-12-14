@@ -12,9 +12,13 @@ const jsonTodos = JSON.parse(jsonContent);
 // Todo app elindítása, üres argumentum esetén a kézikönyv kinyomtatása
 function startTodo() {
     if (Object.keys(args).length < 2) {
+        console.log('Nem támogatott argumentum!');
+        console.log();
         printTodoManual();
     } else if (argument !== 'l' && argument !== 'a' && argument !== 'r' && argument !== 'c') {
         console.log('Nem támogatott argumentum!');
+        console.log();
+        printTodoManual();
     }
 }
 
